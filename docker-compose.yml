@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+
+  _base:
+    image: g_xqingzhou/golang:1.9
+    volumes: 
+      - .:/go/src/learn-golang
+    working_dir: /go/src/learn-golang
+    command: "true"
+    entrypoint: ./dev/entrypoint.sh
+
+  dev:
+    container_name: 'learn-golang-dev' 
+    extends:
+      service: _base 
